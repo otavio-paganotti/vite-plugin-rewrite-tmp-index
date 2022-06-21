@@ -56,6 +56,9 @@ const rewriteIndexPlugin: typeof _rewriteIndexPlugin = (userOptions) => {
     handleHotUpdate() {
       createTmpIndex(variables, entry);
     },
+    configResolved() {
+      createTmpIndex(variables, entry);
+    },
   };
 };
 
