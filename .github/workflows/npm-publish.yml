@@ -17,11 +17,16 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-          
-      - name: Install dependencies
-        run: yarn
 
-      - run: yarn build
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.31.0
+          
+      - name: Install Dependencies
+        run: pnpm install
+
+      - run: cd packages/core && pnpm build
       - run: npm publish
 
         env:
