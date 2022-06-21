@@ -8,8 +8,8 @@ export default () => {
       lib: {
         entry: path.resolve(__dirname, 'src/index.ts'),
         name: 'vite-plugin-rewrite-tmp-index',
-        formats: ['es', 'umd'],
-        fileName: 'vite-plugin-rewrite-tmp-index'
+        formats: ['cjs', 'es'],
+        fileName: 'index'
       },
       rollupOptions: {
         output: {
