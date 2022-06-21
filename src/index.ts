@@ -1,5 +1,5 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs-extra";
 import type { createTestPlugin as _createTestPlugin, Indexable } from '@/index.d';
+import { ensureDirSync, readFileSync, writeFileSync } from "fs-extra";
 import path from "path";
 
 const DEFAULT_TEMPLATE = "index.html";
@@ -9,13 +9,9 @@ const ignoreDirs = [".", "", "/"];
 const ensureDirectoryExistence = (filePath: string): boolean => {
   const dirname = path.resolve(filePath);
 
-  if (existsSync(dirname)) {
-    return true;
-  }
+  ensureDirSync(dirname);
 
-  mkdirSync(dirname);
-
-  return ensureDirectoryExistence(dirname);
+  return true;
 }
 
 const createTmpIndex = (env: Indexable, entry?: string) => {
