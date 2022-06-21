@@ -13,6 +13,8 @@ interface UserOptions {
   };
 }
 
-declare function createTestPlugin(userOptions: UserOptions): PluginOption;
+declare function rewriteIndexPlugin(userOptions: UserOptions): PluginOption;
 
-export { createTestPlugin, Indexable, UserOptions };
+export { Indexable, UserOptions };
+
+export default rewriteIndexPlugin;
