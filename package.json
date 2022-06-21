@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-rewrite-tmp-index",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/otavio-paganotti/vite-plugin-rewrite-tmp-index",
   "license": "MIT",
   "keywords": [
