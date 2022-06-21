@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 import path from 'path';
 
 export default () => {
@@ -7,6 +8,8 @@ export default () => {
       lib: {
         entry: path.resolve(__dirname, 'src/index.ts'),
         name: 'vite-plugin-rewrite-tmp-index',
+        formats: ['es', 'umd'],
+        fileName: 'vite-plugin-rewrite-tmp-index'
       },
       rollupOptions: {
         output: {
@@ -19,5 +22,6 @@ export default () => {
         '@': path.resolve(__dirname, './src'),
       },
     },
+    plugins: [dts()],
   })
 }
