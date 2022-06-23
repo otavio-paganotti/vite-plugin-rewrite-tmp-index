@@ -1,7 +1,7 @@
 import type { PluginOption } from "vite";
 
 interface Indexable<T = string> {
-  [key: string]: T;
+  [key: string]: T | undefined;
 }
 
 interface UserOptions {

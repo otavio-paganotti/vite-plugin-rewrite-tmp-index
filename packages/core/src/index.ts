@@ -32,9 +32,11 @@ const createTmpIndex = (env: Indexable, entry?: string) => {
 
   if (ensureDirectoryExistence(tmpPath)) {
     Object.entries(env).forEach(([key, value]) => {
-      const regex = new RegExp(key, 'gi')
+      if (value) {
+        const regex = new RegExp(key, 'gi')
   
-      template = template.replace(regex, value);
+        template = template.replace(regex, value);
+      }
     });
 
     writeFileSync(`${tmpPath}/index.html`, template);
